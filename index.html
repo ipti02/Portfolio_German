@@ -902,29 +902,136 @@
   </div>
 
 
-  <section id="moments" class="sub-heading">
 
-    <h2 style="text-align: center; margin-bottom: 20px; color:var(--deep-darkest-blue); font-size: 2.2rem;">
-      BESONDERE MOMENTE
-    </h2>
-    <div class="achievement-slider">
-      <div><img src="images/a1.jpg" alt="Crest 1"></div>
-      <div><img src="images/a2.jpg" alt="Crest 2"></div>
-      <div><img src="images/a3.jpg" alt="Crest 3"></div>
-      <div><img src="images/a4.jpg" alt="Crest 4"></div>
-      <div><img src="images/a5.jpg" alt="Crest 1"></div>
-      <div><img src="images/a6.jpg" alt="Crest 2"></div>
-      <div><img src="images/a7.jpg" alt="Crest 3"></div>
-      <div><img src="images/a8.jpg" alt="Crest 4"></div>
-      <div><img src="images/a9.jpg" alt="Crest 1"></div>
-      <div><img src="images/a10.jpg" alt="Crest 2"></div>
-      <div><img src="images/a11.jpg" alt="Crest 3"></div>
-      <div><img src="images/a12.jpg" alt="Crest 4"></div>
+
+
+  <!-- =========================
+     BESONDERE MOMENTE
+========================= -->
+
+  <section id="moments" class="moments-section">
+
+    <h2><i class="fas fa-camera"></i> BESONDERE MOMENTE</h2>
+
+    <p class="moments-subtitle">
+      Einige besondere Erinnerungen, Veranstaltungen und unvergessliche Momente meiner Reise.
+    </p>
+
+    <div class="moments-scroll-wrapper">
+
+      <button class="moments-scroll-btn moments-left-btn">&#10094;</button>
+
+      <div class="moments-container">
+
+        <div class="moments-scroll">
+
+          <div class="moment-card">
+            <img src="images/a1.jpg" alt="Moment 1" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/p4.jpeg" alt="Moment 1" class="moment-img">
+          </div>
+
+
+          <div class="moment-card">
+            <img src="images/p1.jpeg" alt="Moment 1" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/p2.jpeg" alt="Moment 1" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/p3.jpeg" alt="Moment 1" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a2.jpg" alt="Moment 2" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a3.jpg" alt="Moment 3" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a4.jpg" alt="Moment 4" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a5.jpg" alt="Moment 5" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a6.jpg" alt="Moment 6" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a7.jpg" alt="Moment 7" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a8.jpg" alt="Moment 8" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a9.jpg" alt="Moment 9" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a10.jpg" alt="Moment 10" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a11.jpg" alt="Moment 11" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+            <img src="images/a12.jpg" alt="Moment 12" class="moment-img">
+          </div>
+
+          <div class="moment-card">
+  <div class="moment-img-box">
+
+    <video controls class="moment-video">
+      <source src="videos/arduino.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  </div>
+
+  <p class="moment-caption">
+    My Special Event Moment
+  </p>
+</div>
+
+
+
+
+
+        </div>
+
+      </div>
+
+      <button class="moments-scroll-btn moments-right-btn">&#10095;</button>
+
     </div>
   </section>
 
+  <!-- POPUP MODAL -->
 
-  <!-- Contact Section -->
+  <div id="momentModal" class="certificate-modal">
+
+    <span class="close-modal">&times;</span>
+
+    <img class="modal-content" id="momentModalImg">
+
+  </div>
+
+
+
+
+
   <!-- Contact Section -->
   <section id="contact" class="contact">
 
@@ -1044,67 +1151,9 @@
 
   </div>
 
-  <script>
-    // Smooth scroll + hide splash
-    document.querySelector('.explore-btn').addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
-      document.getElementById('splash-screen').style.display = 'none';
-    });
 
 
-  </script>
 
-  <div id="certificateModal" class="certificate-modal">
-
-    <span class="close-modal">&times;</span>
-
-    <img class="modal-content" id="modalImage">
-
-  </div>
-  <script>
-
-    document.addEventListener("DOMContentLoaded", () => {
-
-      const modal = document.getElementById("certificateModal");
-
-      const modalImg = document.getElementById("modalImage");
-
-      const images = document.querySelectorAll(".certificate-img");
-
-      const closeBtn = document.querySelector(".close-modal");
-
-      images.forEach(img => {
-
-        img.addEventListener("click", () => {
-
-          modal.style.display = "block";
-
-          modalImg.src = img.src;
-
-        });
-
-      });
-
-      closeBtn.onclick = () => {
-
-        modal.style.display = "none";
-
-      };
-
-      modal.onclick = (e) => {
-
-        if (e.target === modal) {
-
-          modal.style.display = "none";
-
-        }
-
-      };
-
-    });
-
-  </script>
 
 </body>
 

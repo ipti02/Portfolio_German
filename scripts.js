@@ -289,6 +289,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =========================
+     Smooth Horizontal Scroll
+  ========================= */
+
+  const momentsContainer = document.querySelector(".moments-container");
+
+  const leftBtn = document.querySelector(".moments-left-btn");
+
+  const rightBtn = document.querySelector(".moments-right-btn");
+
+  rightBtn.addEventListener("click", () => {
+    momentsContainer.scrollBy({
+      left: 350,
+      behavior: "smooth"
+    });
+  });
+
+  leftBtn.addEventListener("click", () => {
+    momentsContainer.scrollBy({
+      left: -350,
+      behavior: "smooth"
+    });
+  });
+
+  /* =========================
+     Image Popup
+  ========================= */
+
+  const modal = document.getElementById("momentModal");
+
+  const modalImg = document.getElementById("momentModalImg");
+
+  const images = document.querySelectorAll(".moment-img");
+
+  const closeBtn = modal.querySelector(".close-modal");
+
+  images.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+      modal.style.display = "block";
+
+      modalImg.src = img.src;
+
+    });
+
+  });
+
+  closeBtn.onclick = () => {
+
+    modal.style.display = "none";
+
+  };
+
+  modal.onclick = (e) => {
+
+    if (e.target === modal) {
+
+      modal.style.display = "none";
+
+    }
+
+  };
+
+});
+
+
+
 
 
 
@@ -299,12 +369,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // Rotating dancing text - continuous loop
 (function() {
   const phrases = [
-    "💡 Researcher", 
-    "Developer", 
-    "Innovator 🚀", 
-    "NLP Enthusiast", 
-    "AI & ML Explorer",
-    "Competitive Programmer"
+    "💡 Engagierte Lernende", 
+    "Problemlöserin", 
+    "Teamplayerin", 
+    
   ];
   const el = document.getElementById("dancing-text");
   if (!el) return;
@@ -340,3 +408,58 @@ document.addEventListener("DOMContentLoaded", () => {
   // start the loop after the first hold period
   setTimeout(nextPhrase, hold);
 })();
+
+
+
+    // Smooth scroll + hide splash
+    document.querySelector('.explore-btn').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('splash-screen').style.display = 'none';
+    });
+
+
+  
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const modal = document.getElementById("certificateModal");
+
+      const modalImg = document.getElementById("modalImage");
+
+      const images = document.querySelectorAll(".certificate-img");
+
+      const closeBtn = document.querySelector(".close-modal");
+
+      images.forEach(img => {
+
+        img.addEventListener("click", () => {
+
+          modal.style.display = "block";
+
+          modalImg.src = img.src;
+
+        });
+
+      });
+
+      closeBtn.onclick = () => {
+
+        modal.style.display = "none";
+
+      };
+
+      modal.onclick = (e) => {
+
+        if (e.target === modal) {
+
+          modal.style.display = "none";
+
+        }
+
+      };
+
+    });
+

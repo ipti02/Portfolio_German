@@ -159,6 +159,7 @@ new Swiper(".project-slider", {
   }
 });
 
+
 // ===== Show More / Less Details in Project Cards =====
 const projectToggleBtn = document.getElementById('projectToggleBtn');
 const projectCards = document.querySelectorAll('.project-card');
@@ -177,6 +178,45 @@ projectToggleBtn.addEventListener('click', () => {
 
   projectToggleBtn.textContent = showAllDetails ? 'See Less' : 'See More';
 });
+
+
+
+const btn = document.getElementById("seeMoreBtn");
+const text = document.querySelector(".research-details p");
+
+let expanded = false;
+
+btn.addEventListener("click", () => {
+  expanded = !expanded;
+
+  if (expanded) {
+    text.classList.add("expanded");
+    btn.innerText = "See Less";
+  } else {
+    text.classList.remove("expanded");
+    btn.innerText = "See More";
+  }
+});
+
+
+
+const scrollContainer = document.querySelector(".cert-awards-container");
+
+document.querySelector(".right-btn").addEventListener("click", () => {
+  scrollContainer.scrollBy({
+    left: 350,
+    behavior: "smooth"
+  });
+});
+
+document.querySelector(".left-btn").addEventListener("click", () => {
+  scrollContainer.scrollBy({
+    left: -350,
+    behavior: "smooth"
+  });
+});
+
+
 
 
 

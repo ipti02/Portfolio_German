@@ -463,3 +463,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
+
+  document.querySelectorAll(".video-card").forEach(card => {
+    const video = card.querySelector(".moment-video");
+    const btn = card.querySelector(".play-btn");
+
+    // ▶ button click = play
+    btn.addEventListener("click", () => {
+      video.currentTime = 0;
+      video.play();
+      btn.style.display = "none";
+    });
+
+    // 🎬 video click = pause/play toggle
+    video.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+        btn.style.display = "none";
+      } else {
+        video.pause();
+        btn.innerHTML = "▶";
+        btn.style.display = "flex";
+      }
+    });
+
+    // ⏸ pause event
+    video.addEventListener("pause", () => {
+      if (!video.ended) {
+        btn.innerHTML = "▶";
+        btn.style.display = "flex";
+      }
+    });
+
+    // 🔚 ended event
+    video.addEventListener("ended", () => {
+      btn.innerHTML = "↻";
+      btn.style.display = "flex";
+    });
+  });
